@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RushResQ - Smart AI & IOT Traffic Management System</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RushResQ - Smart AI & IOT Traffic Management System</title>
 
-  <link rel="icon" href="favicon.jpg" type="image/jpeg" />
-  <meta name="description" content="Request emergency green corridors instantly with RushResQ.">
-  <meta name="author" content="Team Innovions">
+    <link rel="icon" href="favicon.jpg" type="image/jpeg" />
+    <meta
+      name="description"
+      content="Request emergency green corridors instantly with RushResQ."
+    />
+    <meta name="author" content="Team Innovions" />
 
-  <style>
-    /* keep popup ~2-3cm above bottom */
-    #vapi-chatbot {
-      position: fixed;
-      bottom: 80px !important;
-      right: 20px !important;
-      width: 350px;
-      height: 500px;
-      z-index: 9999;
-    }
-  </style>
-</head>
-<body>
-  <!-- visible app root -->
-  <div id="root">
-    <h1>RushResQ</h1>
-    <p>AI-powered emergency corridor system</p>
-  </div>
+    <style>
+      /* keep popup ~2-3cm above bottom */
+      #vapi-chatbot {
+        position: fixed;
+        bottom: 80px !important;
+        right: 20px !important;
+        width: 350px;
+        height: 500px;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vapi-chatbot"></div>
+    <script type="module" src="/src/main.tsx"></script>
 
-  <!-- Vapi widget container -->
-  <div id="vapi-chatbot"></div>
+    <!-- visible app root -->
+    <div id="root">
+      <h1>RushResQ</h1>
+      <p>AI-powered emergency corridor system</p>
+    </div>
 
-  <!-- config and client script (added in later commits) -->
-  <script src="src/config.example.js" defer></script>
-  <script src="src/vapi.js" defer></script>
-</body>
+    <!-- Vapi widget container -->
+    <div id="vapi-chatbot"></div>
+
+    <!-- config and client script (added in later commits) -->
+    <script src="src/config.example.js" defer></script>
+    <script src="src/vapi.js" defer></script>
+  </body>
 </html>
