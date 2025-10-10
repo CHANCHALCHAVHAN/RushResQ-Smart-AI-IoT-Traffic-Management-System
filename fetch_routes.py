@@ -14,3 +14,9 @@ PRIORITY_ORDER = {
     "firetruck": 2,
     "police": 3
 }
+
+def fetch_routes_once():
+    try:
+        response = requests.get(API_URL, timeout=10)
+        response.raise_for_status()
+        data = response.json()
