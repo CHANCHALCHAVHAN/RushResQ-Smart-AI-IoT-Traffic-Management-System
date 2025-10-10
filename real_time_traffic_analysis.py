@@ -63,5 +63,9 @@ while cap.isOpened():
         # Retrieve the bounding boxes from the results
         bounding_boxes = results[0].boxes
 
+       # Initialize counters for vehicles in each lane
+        vehicles_in_left_lane = 0
+        vehicles_in_right_lane = 0
+
 
         
