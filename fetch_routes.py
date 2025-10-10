@@ -43,3 +43,13 @@ def fetch_routes_once():
                 "Timestamp": timestamp
             })
 
+        # ✅ Group by Route (lane)
+        lanes = defaultdict(list)
+        for item in extracted:
+            lanes[item["Route"]].append(item)
+
+        # ✅ Decide priority within each lane
+        lane_decisions = {}
+        for route_no, vehicles in lanes.items():
+            vehicles_sorted = sorted(vehicles, key=lambda v: PRIORITY_ORDER.get(v["Vehicle"], 99))
+            lane_decisions[route_no] = vehicles_sorted[0]  # top vehicle in this lane
