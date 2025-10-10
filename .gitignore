@@ -1,0 +1,18 @@
+# Node
+node_modules/
+package-lock.json
+bun.lockb
+yarn.lock
+
+# Builds
+dist/
+.vite/
+
+# env & editor
+.env
+.vscode/
+.DS_Store
+*.log
+npm-debug.log
+.idea/
+coverage/
