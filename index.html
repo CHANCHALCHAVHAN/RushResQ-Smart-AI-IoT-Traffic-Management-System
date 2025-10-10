@@ -40,5 +40,21 @@
     <!-- config and client script (added in later commits) -->
     <script src="src/config.example.js" defer></script>
     <script src="src/vapi.js" defer></script>
+    <script>
+      const assistantId = "387deb3e-5591-425b-a815-34fcf1fb5752";
+      const apiKey = "6d92c2b5-0061-423a-9097-6ba5963cdec9";
+
+      const buttonConfig = { container: "#vapi-chatbot" };
+
+      (function (d, t) {
+        var g = document.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src =
+          "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+      })(document, "script");
+    </script>
   </body>
 </html>
