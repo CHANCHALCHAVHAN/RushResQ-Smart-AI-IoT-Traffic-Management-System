@@ -92,5 +92,43 @@ while cap.isOpened():
         cv2.putText(processed_frame, f'Vehicles in Left Lane: {vehicles_in_left_lane}', text_position_left_lane, 
                     font, font_scale, font_color, 2, cv2.LINE_AA)
 
+                # Add a background rectangle for the left lane traffic intensity
+        cv2.rectangle(processed_frame, (intensity_position_left_lane[0]-10, intensity_position_left_lane[1] - 25), 
+                      (intensity_position_left_lane[0] + 460, intensity_position_left_lane[1] + 10), background_color, -1)
 
+        # Add the traffic intensity text on top of the rectangle for the left lane
+        cv2.putText(processed_frame, f'Traffic Intensity: {traffic_intensity_left}', intensity_position_left_lane, 
+                    font, font_scale, font_color, 2, cv2.LINE_AA)
+
+        # Add a background rectangle for the right lane vehicle count
+        cv2.rectangle(processed_frame, (text_position_right_lane[0]-10, text_position_right_lane[1] - 25), 
+                      (text_position_right_lane[0] + 460, text_position_right_lane[1] + 10), background_color, -1)
+
+        # Add the vehicle count text on top of the rectangle for the right lane
+        cv2.putText(processed_frame, f'Vehicles in Right Lane: {vehicles_in_right_lane}', text_position_right_lane, 
+                    font, font_scale, font_color, 2, cv2.LINE_AA)
+
+        # Add a background rectangle for the right lane traffic intensity
+        cv2.rectangle(processed_frame, (intensity_position_right_lane[0]-10, intensity_position_right_lane[1] - 25), 
+                      (intensity_position_right_lane[0] + 460, intensity_position_right_lane[1] + 10), background_color, -1)
+
+        # Add the traffic intensity text on top of the rectangle for the right lane
+        cv2.putText(processed_frame, f'Traffic Intensity: {traffic_intensity_right}', intensity_position_right_lane, 
+                    font, font_scale, font_color, 2, cv2.LINE_AA)
+
+        # Display the processed frame
+        cv2.imshow('Real-time Traffic Analysis', processed_frame)
+
+        # Press Q on keyboard to exit the loop
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    else:
+        break
+
+# Release the video capture and video write objects
+cap.release()
+out.release()
+
+# Close all the frames
+cv2.destroyAllWindows()
        
