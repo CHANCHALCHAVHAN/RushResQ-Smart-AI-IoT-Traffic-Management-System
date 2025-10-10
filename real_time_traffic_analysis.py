@@ -69,3 +69,16 @@ while cap.isOpened():
 
 
         
+            # Loop through each bounding box to count vehicles in each lane
+        for box in bounding_boxes.xyxy:
+            # Check if the vehicle is in the left lane based on the x-coordinate of the bounding box
+            if box[0] < lane_threshold:
+                vehicles_in_left_lane += 1
+            else:
+                vehicles_in_right_lane += 1
+                
+        # Determine the traffic intensity for the left lane
+        traffic_intensity_left = "Heavy" if vehicles_in_left_lane > heavy_traffic_threshold else "Smooth"
+        # Determine the traffic intensity for the right lane
+        traffic_intensity_right = "Heavy" if vehicles_in_right_lane > heavy_traffic_threshold else "Smooth"
+
