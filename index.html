@@ -68,6 +68,24 @@
           emergency: emergencyMatch ? emergencyMatch[0] : null,
         };
       }
+      function saveEmergencyLog(route, emergency) {
+        fetch("https://sheetdb.io/api/v1/k4an08y6yqje2", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: [
+              {
+                Timestamp: new Date().toISOString(),
+                Route_Number: route || "N/A",
+                Emergency_Type: emergency || "N/A",
+              },
+            ],
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log("✅ Saved to SheetDB:", data))
+          .catch((err) => console.error("❌ Error saving to SheetDB:", err));
+      }
     </script>
   </body>
 </html>
