@@ -54,6 +54,9 @@ if (window.vapiSDK) {
     <script src="src/config.example.js" defer></script>
     <script src="src/vapi.js" defer></script>
     <script>
+      const { route, emergency } = extractRouteAndEmergency(userMessage);
+console.log("📌 Extracted:", route, emergency);
+
       const assistantId = "387deb3e-5591-425b-a815-34fcf1fb5752";
       const apiKey = "6d92c2b5-0061-423a-9097-6ba5963cdec9";
 
