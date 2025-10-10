@@ -29,5 +29,39 @@ font_scale = 1
 font_color = (255, 255, 255)    # White color for text
 background_color = (0, 0, 255)  # Red background for text
 
+# Open the video
+cap = cv2.VideoCapture('sample_video.mp4')
+
+# Define the codec and create VideoWriter object
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('processed_sample_video.avi', fourcc, 20.0, (int(cap.get(3)), int(cap.get(4))))
+
+# Read until video is completed
+while cap.isOpened():
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+    if ret:
+        # Create a copy of the original frame to modify
+        detection_frame = frame.copy()
+    
+        # Black out the regions outside the specified vertical range
+        detection_frame[:x1, :] = 0  # Black out from top to x1
+        detection_frame[x2:, :] = 0  # Black out from x2 to the bottom of the frame
+        
+        # Perform inference on the modified frame
+        results = best_model.predict(detection_frame, imgsz=640, conf=0.4)
+        processed_frame = results[0].plot(line_width=1)
+        
+        # Restore the original top and bottom parts of the frame
+        processed_frame[:x1, :] = frame[:x1, :].copy()
+        processed_frame[x2:, :] = frame[x2:, :].copy()        
+        
+        # Draw the quadrilaterals on the processed frame
+        cv2.polylines(processed_frame, [vertices1], isClosed=True, color=(0, 255, 0), thickness=2)
+        cv2.polylines(processed_frame, [vertices2], isClosed=True, color=(255, 0, 0), thickness=2)
+        
+        # Retrieve the bounding boxes from the results
+        bounding_boxes = results[0].boxes
+
 
         
