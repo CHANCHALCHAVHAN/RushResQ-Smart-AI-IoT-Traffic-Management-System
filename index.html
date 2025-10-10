@@ -1,3 +1,16 @@
+
+if (window.vapiSDK) {
+  window.vapiInstance = window.vapiSDK.run({
+    apiKey: apiKey,
+    assistant: assistantId,
+    config: buttonConfig,
+  });
+
+  window.vapiInstance.on("user_message", (event) => {
+    const userMessage = event.text;
+    console.log("🗣 User said:", userMessage);
+  });
+}
 <!DOCTYPE html>
 <html lang="en">
   <head>
