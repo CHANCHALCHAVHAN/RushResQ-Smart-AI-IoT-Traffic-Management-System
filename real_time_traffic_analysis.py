@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+from ultralytics import YOLO
+
 
 # Load the best fine-tuned YOLOv8 model
 best_model = YOLO('models/best.pt')
