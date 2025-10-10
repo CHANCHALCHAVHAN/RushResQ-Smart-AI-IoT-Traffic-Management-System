@@ -20,3 +20,8 @@ def fetch_routes_once():
         response = requests.get(API_URL, timeout=10)
         response.raise_for_status()
         data = response.json()
+   # Ensure it's a list of records
+        routes = data.get("routes") if isinstance(data, dict) else data
+        if not isinstance(routes, list):
+            print("❌ ERROR: Expected a list of routes, got:", type(routes))
+            return
