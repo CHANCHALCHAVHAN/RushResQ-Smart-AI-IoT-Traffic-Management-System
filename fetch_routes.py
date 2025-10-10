@@ -25,3 +25,21 @@ def fetch_routes_once():
         if not isinstance(routes, list):
             print("❌ ERROR: Expected a list of routes, got:", type(routes))
             return
+
+        # Extract and normalize
+        extracted = []
+        for r in routes:
+            route_no = r.get("Route Number", "UNKNOWN")
+            vehicle = r.get("Vehicle Type", "other").lower()
+            vehicle_id = r.get("Vehicle ID", "N/A")
+            caller = r.get("Caller Name", "N/A")
+            timestamp = r.get("Timestamp", "N/A")
+
+            extracted.append({
+                "Route": route_no,
+                "Vehicle": vehicle,
+                "Vehicle ID": vehicle_id,
+                "Caller": caller,
+                "Timestamp": timestamp
+            })
+
