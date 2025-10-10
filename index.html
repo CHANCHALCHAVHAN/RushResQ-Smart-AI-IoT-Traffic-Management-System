@@ -8,14 +8,31 @@
   <link rel="icon" href="favicon.jpg" type="image/jpeg" />
   <meta name="description" content="Request emergency green corridors instantly with RushResQ.">
   <meta name="author" content="Team Innovions">
-  <meta name="keywords" content="emergency corridors, traffic optimization, AI traffic, IoT">
-  <!-- Open Graph -->
-  <meta property="og:title" content="RushResQ - Smarter Traffic, Faster Rescue">
-  <meta property="og:description" content="AI-powered emergency corridor system for instant traffic optimization.">
-  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+  <style>
+    /* keep popup ~2-3cm above bottom */
+    #vapi-chatbot {
+      position: fixed;
+      bottom: 80px !important;
+      right: 20px !important;
+      width: 350px;
+      height: 500px;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
-  <h1>RushResQ</h1>
-  <p>AI + IoT emergency corridor prototype</p>
+  <!-- visible app root -->
+  <div id="root">
+    <h1>RushResQ</h1>
+    <p>AI-powered emergency corridor system</p>
+  </div>
+
+  <!-- Vapi widget container -->
+  <div id="vapi-chatbot"></div>
+
+  <!-- config and client script (added in later commits) -->
+  <script src="src/config.example.js" defer></script>
+  <script src="src/vapi.js" defer></script>
 </body>
 </html>
