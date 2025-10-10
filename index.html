@@ -55,6 +55,19 @@
         g.async = true;
         s.parentNode.insertBefore(g, s);
       })(document, "script");
+      function extractRouteAndEmergency(message) {
+        const routeRegex = /(Route[-\s]?\d+|रूट\s*नंबर\s*\d+)/i;
+        const emergencyRegex =
+          /(accident|fire|medical|police|rescue|ambulance|emergency|एक्सीडेंट|आग|मेडिकल\s*इमरजेंसी)/i;
+
+        const routeMatch = message.match(routeRegex);
+        const emergencyMatch = message.match(emergencyRegex);
+
+        return {
+          route: routeMatch ? routeMatch[0] : null,
+          emergency: emergencyMatch ? emergencyMatch[0] : null,
+        };
+      }
     </script>
   </body>
 </html>
