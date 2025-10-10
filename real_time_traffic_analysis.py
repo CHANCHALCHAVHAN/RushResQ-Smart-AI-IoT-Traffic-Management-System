@@ -82,3 +82,4 @@ while cap.isOpened():
         # Determine the traffic intensity for the right lane
         traffic_intensity_right = "Heavy" if vehicles_in_right_lane > heavy_traffic_threshold else "Smooth"
 
+       
