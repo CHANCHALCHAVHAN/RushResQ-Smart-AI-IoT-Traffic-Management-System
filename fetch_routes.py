@@ -53,3 +53,16 @@ def fetch_routes_once():
         for route_no, vehicles in lanes.items():
             vehicles_sorted = sorted(vehicles, key=lambda v: PRIORITY_ORDER.get(v["Vehicle"], 99))
             lane_decisions[route_no] = vehicles_sorted[0]  # top vehicle in this lane
+
+
+        # Print all data
+        print("\n✅ Live Data (All Vehicles):\n")
+        table = [[r["Route"], r["Vehicle"], r["Vehicle ID"], r["Caller"], r["Timestamp"]] for r in extracted]
+        print(tabulate(table, headers=["Route", "Vehicle", "Vehicle ID", "Caller", "Timestamp"], tablefmt="grid"))
+
+        # Print lane-level priority
+        print("\n🚦 Lane Decisions (Highest Priority in each lane):\n")
+        decision_table = []
+        for route_no, top in lane_decisions.items():
+            decision_table.append([route_no, top["Vehicle"], top["Caller"], top["Timestamp"]])
+        print(tabulate(decision_table, headers=["Route", "Top Vehicle", "Caller", "Timestamp"], tablefmt="grid"))
