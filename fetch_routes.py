@@ -66,3 +66,16 @@ def fetch_routes_once():
         for route_no, top in lane_decisions.items():
             decision_table.append([route_no, top["Vehicle"], top["Caller"], top["Timestamp"]])
         print(tabulate(decision_table, headers=["Route", "Top Vehicle", "Caller", "Timestamp"], tablefmt="grid"))
+
+        # ✅ FINAL DECISION: Which route gets overall priority
+        sorted_routes = sorted(lane_decisions.values(), key=lambda v: PRIORITY_ORDER.get(v["Vehicle"], 99))
+        if sorted_routes:
+            final = sorted_routes[0]
+            print(f"\n🚨 FINAL DECISION: Selected Route = {final['Route']} | Vehicle = {final['Vehicle'].upper()} | Caller = {final['Caller']}")
+        else:
+            print("⚠️ No routes available for decision.")
+
+    except Exception as e:
+        print("⚠️ Error fetching data:", e)
+
+
