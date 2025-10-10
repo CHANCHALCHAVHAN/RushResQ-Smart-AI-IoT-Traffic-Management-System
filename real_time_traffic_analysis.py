@@ -82,4 +82,15 @@ while cap.isOpened():
         # Determine the traffic intensity for the right lane
         traffic_intensity_right = "Heavy" if vehicles_in_right_lane > heavy_traffic_threshold else "Smooth"
 
+
+
+            # Add a background rectangle for the left lane vehicle count
+        cv2.rectangle(processed_frame, (text_position_left_lane[0]-10, text_position_left_lane[1] - 25), 
+                      (text_position_left_lane[0] + 460, text_position_left_lane[1] + 10), background_color, -1)
+
+        # Add the vehicle count text on top of the rectangle for the left lane
+        cv2.putText(processed_frame, f'Vehicles in Left Lane: {vehicles_in_left_lane}', text_position_left_lane, 
+                    font, font_scale, font_color, 2, cv2.LINE_AA)
+
+
        
