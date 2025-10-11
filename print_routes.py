@@ -15,3 +15,13 @@ def print_all_routes():
             print(f"ID: {r[0]} | Route No: {r[1]} | {r[2]} -> {r[3]} | Status: {r[4]} | Created: {r[5]}")
     conn.close()
 
+def print_latest_route():
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("SELECT route_no FROM routes ORDER BY id DESC LIMIT 1")
+    row = cur.fetchone()
+    if row:
+        print("\nLatest Route Number:", row[0])
+    else:
+        print("⚠️ No routes found.")
+    conn.close()
