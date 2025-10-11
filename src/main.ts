@@ -15,3 +15,4 @@ app.innerHTML = `
 `
 const slot = document.getElementById('card-slot')!
 slot.appendChild(statusCard('API Status', `Base: ${API_BASE}`))
+slot.appendChild(statusCard('IoT Sensors', '0 devices discovered — connect devices to see them here'))
