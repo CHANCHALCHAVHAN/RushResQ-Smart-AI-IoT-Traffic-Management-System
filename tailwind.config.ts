@@ -39,4 +39,6 @@ extend: {
     "bounce-in": "bounce-in 0.5s ease-out",
     "pulse-glow": "pulse-glow 2s ease-in-out infinite",
   },
+  feat: add custom border radius, shadows, and UI animations
+
 }
