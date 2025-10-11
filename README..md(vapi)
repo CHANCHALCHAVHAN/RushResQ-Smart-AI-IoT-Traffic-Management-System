@@ -13,3 +13,5 @@ This branch is a from-scratch scaffold (Vite + TypeScript + Tailwind) demonstrat
     npm install
 # start dev server
     npm run dev
+
+Open the URL printed by Vite (usually http://localhost:5173).
