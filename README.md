@@ -72,6 +72,7 @@ https://github.com/user-attachments/assets/acfa6e29-0611-4e56-ae2b-318cfd1d824f
 <img width="1919" height="891" alt="Screenshot 2025-10-11 174552" src="https://github.com/user-attachments/assets/eb70ce2f-1ec2-4bf0-9587-8c8e12893aec" />
 
 [**RushResQ Website**](https://rushresq.lovable.app/)
+[**To View full Demonstration click Here**](https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/blob/main/Screen%20Recording%202025-10-11%20174928.mp4)
 
 [we have hosted it with the hep of lovable AI]
 
