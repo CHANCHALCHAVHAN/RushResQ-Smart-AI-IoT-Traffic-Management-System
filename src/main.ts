@@ -14,3 +14,4 @@ app.innerHTML = `
   </main>
 `
 const slot = document.getElementById('card-slot')!
+slot.appendChild(statusCard('API Status', `Base: ${API_BASE}`))
