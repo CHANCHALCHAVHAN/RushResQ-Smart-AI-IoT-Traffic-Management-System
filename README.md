@@ -50,9 +50,11 @@ It reduces congestion, ensures emergency vehicle prioritization, and enables sma
 
 ## 📹 **Demo Video**
 
-<p align="center">
-  🎥 <a href="https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/blob/main/output_video.mp4"><b>Watch the Demo Video</b></a>
-</p>
+
+
+https://github.com/user-attachments/assets/acfa6e29-0611-4e56-ae2b-318cfd1d824f
+
+
 
 ---
 
@@ -65,24 +67,33 @@ It reduces congestion, ensures emergency vehicle prioritization, and enables sma
 
 ---
 
+## New Website Preview
+---
+<img width="1919" height="891" alt="Screenshot 2025-10-11 174552" src="https://github.com/user-attachments/assets/eb70ce2f-1ec2-4bf0-9587-8c8e12893aec" />
+
+[**RushResQ Website**](https://rushresq.lovable.app/)
+
+[we have hosted it with the hep of lovable AI]
+
+---
+
 ## 🧠 **Project Branches**
 
 | Branch | Description | Link |
 |--------|-------------|------|
 | 🧩 **AI Logic Prediction** | Contains AI model for traffic prediction using TensorFlow and OpenCV. | [View Branch](https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/tree/AI_Prediction_logic) |
 | ⚙️ **Main Brain of System** | Core control logic integrating sensors, signals, and AI response. | [View Branch](https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/tree/Main_Brain_Of_System) |
-| 🧠 **AI Prediction Logic** | Smart traffic density estimation & green corridor logic. | [View Branch](https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/tree/AI_Prediction_logic) |
 | 🌍 **New Website** | Final website version with user-friendly and mobile-responsive design. | [View Branch](https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/tree/New_website) |
 | 💻 **vAPI (Vehicle API)** | Handles data communication between IoT and server systems. | [View Branch](https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/tree/vapi) |
 
 ---
 
-## 📄 **Presentation PDF**
+## 📘 **Presentation Preview**
 
-📘 [**View Project Presentation (PDF)**](./RushResQ_Presentation.pdf)
+<iframe src="https://docs.google.com/gview?url=https://github.com/CHANCHALCHAVHAN/RushResQ-Smart-AI-IoT-Traffic-Management-System/raw/main/Copy%20of%20TeamINNOVIONS_108256.pptx_compressed.pdf&embedded=true" width="100%" height="600px"></iframe>
 
-> 🔧 To make your PDF **display inside GitHub instead of downloading**, compress it below **25 MB**.  
-> (Tip: Use “Smallpdf” or “iLovePDF” → Compress to **20–25 MB** max.)
+🔧 To make your PDF display inside GitHub instead of downloading, compress it below **25 MB**.  
+(Tip: Use “Smallpdf” or “iLovePDF” → Compress to **20–25 MB max**.)
 
 ---
 
@@ -107,9 +118,13 @@ It reduces congestion, ensures emergency vehicle prioritization, and enables sma
 ---
 
 ## 🧑‍💻 **Contributors**
+
 | Name | Role |
 |------|------|
 | **Chanchal Chavhan** | Project Lead, AI & IoT Developer |
+| **Shraddha Chavan** | AI & Backend Developer |
+| **Sanika More** | vapi Chatbot Developer|
+| **Kunal Gawand** | Vapi Chatbot co-Developer |
 | **Team RushResQ** | System Integration & Design |
 
 ---
