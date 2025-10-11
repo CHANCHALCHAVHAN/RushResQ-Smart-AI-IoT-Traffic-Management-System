@@ -13,3 +13,4 @@ app.innerHTML = `
     </div>
   </main>
 `
+const slot = document.getElementById('card-slot')!
