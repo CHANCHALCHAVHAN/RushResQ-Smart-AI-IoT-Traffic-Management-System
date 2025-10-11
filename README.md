@@ -26,3 +26,4 @@ https://github.com/user-attachments/assets/acef7ddb-044b-4cfd-8fa0-e7d660494d8d
 🏁 Impact
 1)Enables smart traffic load balancing.
 2)Assists in real-time emergency route management.
+3)Improves overall traffic flow and safety.
