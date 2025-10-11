@@ -9,3 +9,7 @@ app.innerHTML = `
     <h1 class="text-2xl font-bold mb-2">RushResQ — vapi (Hackathon)</h1>
       <p class="text-sm text-gray-600 mb-4">From-scratch branch scaffold for API integration & dashboard.</p>
       <div id="card-slot" class="space-y-3"></div>
+        <div class="mt-6 text-right text-xs text-gray-500">Branch: <strong>vapi</strong></div>
+    </div>
+  </main>
+`
