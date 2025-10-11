@@ -11,3 +11,5 @@ This branch is a from-scratch scaffold (Vite + TypeScript + Tailwind) demonstrat
 
 # install deps
     npm install
+# start dev server
+    npm run dev
