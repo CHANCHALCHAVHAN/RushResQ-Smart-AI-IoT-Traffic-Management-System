@@ -8,3 +8,4 @@ app.innerHTML = `
     <div class="max-w-2xl p-8 bg-white rounded-2xl shadow-lg">
     <h1 class="text-2xl font-bold mb-2">RushResQ — vapi (Hackathon)</h1>
       <p class="text-sm text-gray-600 mb-4">From-scratch branch scaffold for API integration & dashboard.</p>
+      <div id="card-slot" class="space-y-3"></div>
