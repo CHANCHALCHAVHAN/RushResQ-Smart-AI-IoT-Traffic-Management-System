@@ -1,0 +1,120 @@
+
+if (window.vapiSDK) {
+  window.vapiInstance = window.vapiSDK.run({
+    apiKey: apiKey,
+    assistant: assistantId,
+    config: buttonConfig,
+  });
+
+  window.vapiInstance.on("user_message", (event) => {
+    const userMessage = event.text;
+    console.log("🗣 User said:", userMessage);
+  });
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RushResQ - Smart AI & IOT Traffic Management System</title>
+
+    <link rel="icon" href="favicon.jpg" type="image/jpeg" />
+    <meta
+      name="description"
+      content="Request emergency green corridors instantly with RushResQ."
+    />
+    <meta name="author" content="Team Innovions" />
+
+    <style>
+      /* keep popup ~2-3cm above bottom */
+      #vapi-chatbot {
+        position: fixed;
+        bottom: 80px !important;
+        right: 20px !important;
+        width: 350px;
+        height: 500px;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vapi-chatbot"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- visible app root -->
+    <div id="root">
+      <h1>RushResQ</h1>
+      <p>AI-powered emergency corridor system</p>
+    </div>
+
+    <!-- Vapi widget container -->
+    <div id="vapi-chatbot"></div>
+
+    <!-- config and client script (added in later commits) -->
+    <script src="src/config.example.js" defer></script>
+    <script src="src/vapi.js" defer></script>
+    <script>
+      const { route, emergency } = extractRouteAndEmergency(userMessage);
+console.log("📌 Extracted:", route, emergency);
+
+      const assistantId = "387deb3e-5591-425b-a815-34fcf1fb5752";
+      const apiKey = "6d92c2b5-0061-423a-9097-6ba5963cdec9";
+
+      const buttonConfig = { container: "#vapi-chatbot" };
+
+      (function (d, t) {
+        var g = document.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src =
+          "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+      })(document, "script");
+      function extractRouteAndEmergency(message) {
+        const routeRegex = /(Route[-\s]?\d+|रूट\s*नंबर\s*\d+)/i;
+        const emergencyRegex =
+          /(accident|fire|medical|police|rescue|ambulance|emergency|एक्सीडेंट|आग|मेडिकल\s*इमरजेंसी)/i;
+
+        const routeMatch = message.match(routeRegex);
+        const emergencyMatch = message.match(emergencyRegex);
+
+        return {
+          route: routeMatch ? routeMatch[0] : null,
+          emergency: emergencyMatch ? emergencyMatch[0] : null,
+        };
+      }
+      function saveEmergencyLog(route, emergency) {
+        fetch("https://sheetdb.io/api/v1/k4an08y6yqje2", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: [
+              {
+                Timestamp: new Date().toISOString(),
+                Route_Number: route || "N/A",
+                Emergency_Type: emergency || "N/A",
+              },
+            ],
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log("✅ Saved to SheetDB:", data))
+          .catch((err) => console.error("❌ Error saving to SheetDB:", err));
+        g.onload = function () {
+  // Initialize floating widget
+  if (window.VapiWidget) {
+    VapiWidget.init({
+      assistantId: assistantId,
+      apiKey: apiKey
+    });
+  }
+};
+
+      }
+      // Save structured data
+saveEmergencyLog(route, emergency);
+
+    </script>
+  </body>
+</html>
