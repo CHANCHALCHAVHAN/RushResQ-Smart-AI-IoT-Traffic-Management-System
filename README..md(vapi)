@@ -8,3 +8,6 @@ This branch is a from-scratch scaffold (Vite + TypeScript + Tailwind) demonstrat
 - Small UI components under `src/components/`.
 
 ## Run locally (quick)
+
+# install deps
+    npm install
