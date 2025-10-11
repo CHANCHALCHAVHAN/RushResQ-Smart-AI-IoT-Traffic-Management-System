@@ -6,3 +6,5 @@ This branch is a from-scratch scaffold (Vite + TypeScript + Tailwind) demonstrat
 - Clean frontend scaffold for judges to preview UI quickly.
 - `src/config.ts` contains `API_BASE` — plug in the backend URL to connect.
 - Small UI components under `src/components/`.
+
+## Run locally (quick)
