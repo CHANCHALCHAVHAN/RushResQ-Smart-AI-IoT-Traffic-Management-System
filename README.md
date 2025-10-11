@@ -21,3 +21,6 @@ It uses real-time data analysis and predictive modeling to determine the optimal
 📈 Data-Driven Predictions – Utilizes machine learning-inspired logic to make fast, accurate route predictions.
 
 ⚡ Seamless Integration – Works with modules like Vehicle Count per Lane and Live Route Monitor.
+
+
+🏁 Impact
