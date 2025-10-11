@@ -25,3 +25,8 @@ def print_latest_route():
     else:
         print("⚠️ No routes found.")
     conn.close()
+
+if __name__ == "__main__":
+    print_all_routes()
+    print_latest_route()
+
